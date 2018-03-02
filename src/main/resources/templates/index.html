@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Employee Salary Calculator</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+</head>
+<body>
+<form>
+    <input type="text" id="id" placeholder="Enter ID"/>
+    <input type="text" id="fName" placeholder="Enter First Name"/>
+    <input type="text" id="lName" placeholder="Enter Last Name"/>
+    <input type="text" id="salary" placeholder="Enter Salary"/>
+    <button id="btnSubmit">Submit Employee</button>
+</form>
+
+
+<form>
+    <input id="txtSearch" type="text" placeholder="Enter ID to Search"/>
+    <button id="btnSearch">Search by ID</button>
+</form>
+<p type="text" id="totalSalary">Salary Total for all Employees:$</p>
+<p type="text" id="monthlySalary">Monthly Salary Spend for the Company:$</p>
+<p type="text" id="biWeeklySalary">Bi-Weekly Salary Spend for the Company:$</p>
+<p type="text" id="twiceAMonthSalary">Twice a Month Salary Spend for the Company:$</p>
+<div id="container"></div>
+<div id="employees"></div>
+
+</body>
+</html>
