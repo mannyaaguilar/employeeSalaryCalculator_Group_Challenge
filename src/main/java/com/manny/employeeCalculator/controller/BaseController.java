@@ -23,11 +23,22 @@ public class BaseController {
     }
 
     @RequestMapping("/get/{id}")
-    public @ResponseBody List<Employee> findEmployeeById(@PathVariable String id){
+     public @ResponseBody List<Employee> findEmployeeById(@PathVariable String id){
         Employee foundEmployee = employeeRepository.findEmployeeById(id);
         List<Employee> responseArray = new ArrayList<>();
         responseArray.add(foundEmployee);
         return responseArray;
+    }
+
+    @RequestMapping("/getAll/{position}")
+    public @ResponseBody List<Employee> findEmployeeByPosition(@PathVariable String position){
+        return employeeRepository.findEmployeeByPosition(position);
+
+    }
+
+    @RequestMapping("/delete/{id}")
+    public @ResponseBody Employee deleteEmployeeById(@PathVariable String id){
+        return employeeRepository.deleteEmployeeById(id);
     }
 
     @RequestMapping(value = "/add/employee", method = RequestMethod.POST)
@@ -36,9 +47,8 @@ public class BaseController {
         String newFName = String.valueOf(payload.get("firstName"));
         String newLName = String.valueOf(payload.get("lastName"));
         String newSalary = String.valueOf(payload.get("salary"));
-
-        Employee newEmployee = new Employee(newId, newFName, newLName, newSalary);
-
+        String newPosition = String.valueOf(payload.get("position"));
+        Employee newEmployee = new Employee(newId, newFName, newLName, newSalary, newPosition);
         employeeRepository.addEmployee(newEmployee);
 
         return newEmployee;

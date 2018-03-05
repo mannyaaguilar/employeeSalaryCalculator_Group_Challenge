@@ -2,12 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Employee Salary Calculator</title>
+    <title class="text center">Employee Salary Calculator</title>
 
+    <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
     <link rel="stylesheet" th:href="@{/style.css}"/>
 
     <script type="text/javascript" th:src="@{/jquery.js}"></script>
     <script type="text/javascript" th:src="@{/client.js}"></script>
+
+    <h1>EMPLOYEE SALARY CALCULATOR</h1>
 
 </head>
 <body>
@@ -16,6 +19,7 @@
     <input type="text" id="fName" placeholder="Enter First Name"/>
     <input type="text" id="lName" placeholder="Enter Last Name"/>
     <input type="text" id="salary" placeholder="Enter Salary"/>
+    <input type="text" id="position" placeholder="Enter Employee Position"/>
     <button id="btnSubmit">Submit Employee</button>
 </form>
 
@@ -24,12 +28,19 @@
     <input id="txtSearch" type="text" placeholder="Enter ID to Search"/>
     <button id="btnSearch">Search by ID</button>
 </form>
+
+<form>
+    <input id="positionSearch" type="text" placeholder="Enter Position to Search"/>
+    <button id="posSearch">Search by Position</button>
+</form>
+
+<button id="btnGetAll">Get All Employees</button>
 <p type="text" id="totalSalary">Salary Total for all Employees:$</p>
 <p type="text" id="monthlySalary">Monthly Salary Spend for the Company:$</p>
 <p type="text" id="biWeeklySalary">Bi-Weekly Salary Spend for the Company:$</p>
 <p type="text" id="twiceAMonthSalary">Twice a Month Salary Spend for the Company:$</p>
 <div id="container"></div>
-<div id="employees"></div>
+<!--<div id="employees"></div>-->
 
 </body>
 </html>
